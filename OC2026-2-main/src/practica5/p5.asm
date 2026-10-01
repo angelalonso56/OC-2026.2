@@ -8,6 +8,31 @@ _start:
     mov edx, msg          ; edx = dirección de la cadena msg
     call puts             ; imprime cadena
 
+    mov byte[msg],'Z'
+    mov edx, msg
+    call puts
+
+    mov ebx, msg
+    add ebx, 23           
+    mov byte[ebx], 'X'
+    call puts
+
+    mov byte[msg+26],'@'
+    call puts
+
+
+    mov esi, 25
+    mov byte [edx + esi],'Z'
+    call puts
+
+    mov byte [edx + esi - 10],'P'
+    call puts
+
+    mov esi, 2
+    add edx, 15
+    mov byte [edx + (esi*2)],'%'
+    call puts
+
     ; --- FIN DE PROGRAMA ---
     mov eax, 1            ; Llamada sys_exit
 	xor ebx, ebx          ; return 0
