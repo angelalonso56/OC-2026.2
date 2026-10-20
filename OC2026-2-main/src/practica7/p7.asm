@@ -34,7 +34,7 @@ _start:
         call contar
         call extraer
         call atoi
-        add dword [resultado], 5
+        add dword [resultado], 123
         call itoa
 
 
@@ -145,7 +145,7 @@ contar:
         xor edi,edi
         xor esi,esi
         xor edx,edx
-        .for: cmp edi, 3
+        .for: cmp edi, 5
               je .invalido
               mov byte cl,[cadena + edx]
               cmp cl, 0
